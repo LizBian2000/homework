@@ -1,0 +1,125 @@
+.messages {
+    min-width: 260px;
+    height: 100%;
+    background-color: #172534;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__list {
+      width: 100%;
+      flex: 1;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 13px 0;
+    }
+
+    .textarea__wrapper {
+      position: relative;
+      line-height: 0;
+
+      &::after {
+        content: "";
+        border-bottom: 12px solid #ADBECF;
+        border-left: 12px solid transparent;
+        content: "";
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        bottom: 0px;
+        left: calc(~"100% - 12px");
+      }
+    }
+    
+    textarea {
+      height: 55px;
+      min-width: 260px;
+      resize: horizontal;
+      box-sizing: border-box;
+      padding: 20px 50px 20px 20px;
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      color: #EDF1F3;
+      background-color: #26415E;
+      background-image: url("../../asset/images/arrow.png");
+      background-repeat: no-repeat;
+      background-position: calc(~"100% - 20px") center;
+
+      &::-webkit-input-placeholder { /* WebKit browsers */ 
+        color: #EDF1F3; 
+      } 
+      &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+        color: #EDF1F3; 
+      } 
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+        color: #EDF1F3; 
+      } 
+      &:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+        color: #EDF1F3; 
+      }
+    }
+
+    &__item {
+      width: 197px;
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      line-height: 17px;
+      position: relative;
+      padding: 5px;
+      text-align: center;
+      margin-bottom: 16px;
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 20px solid #fff;
+        position: absolute;
+        bottom: 0;
+        background-color: transparent;
+      }
+    }
+
+    &__item_receive {
+      background-color: #fff;
+      color: #465261;
+
+      &::after {
+        border-bottom-color: #fff;
+        left: -10px;
+      }
+    }
+
+    &__item_send {
+      background-color: #2A6DBD;
+      color: #fff;
+
+      &::after {
+        border-bottom-color: #2A6DBD;
+        right: -10px;
+      }
+    }
+
+    &__item_img {
+      line-height: 0;
+      margin-left: -10px;
+      width: 217px;
+
+      &_send {
+        margin-left: 0px;
+        margin-right: -10px;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      &::after {
+        content: none;
+      }
+    }
+  }

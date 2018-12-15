@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  textarea {
+    border: none;
+  }
+}
+
+.home {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #26415E;
+  padding-top: 55px;
+  border-left: 55px solid #071529;
+  display: flex;
+
+  &::after {
+    content: "";
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: 0;
+    left: -55px;
+    background-color: #2A6DBD;
+  }
+}
