@@ -6,7 +6,7 @@ import HomePage from './pages/index.js';
 const app = dva();
 
 // 2. Model
-//app.model({});
+// app.model({});
 
 // 3. Router
 app.router(({ history }) =>

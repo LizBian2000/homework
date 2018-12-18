@@ -19,6 +19,17 @@
     .textarea__wrapper {
       position: relative;
       line-height: 0;
+      background-color: rgb(38, 65, 94);
+      box-sizing: border-box;
+      // padding-right: 12px;
+      resize: horizontal;
+      overflow: auto;
+      min-width: 260px;
+      max-width: 560px;
+
+      &:hover {
+        cursor: e-resize;
+      }
 
       &::after {
         content: "";
@@ -29,13 +40,14 @@
         height: 0px;
         position: absolute;
         bottom: 0px;
-        left: calc(~"100% - 12px");
+        right: 0;
       }
     }
     
-    textarea {
+    input {
+      border: none;
       height: 55px;
-      min-width: 260px;
+      width: 100%;
       resize: horizontal;
       box-sizing: border-box;
       padding: 20px 50px 20px 20px;
@@ -45,7 +57,11 @@
       background-color: #26415E;
       background-image: url("../../asset/images/arrow.png");
       background-repeat: no-repeat;
-      background-position: calc(~"100% - 20px") center;
+      background-position: calc(~"100% - 15px") center;
+
+      &:focus {
+        outline: 0;
+      }
 
       &::-webkit-input-placeholder { /* WebKit browsers */ 
         color: #EDF1F3; 

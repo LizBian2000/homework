@@ -42,6 +42,11 @@
         display: inline-block;
         vertical-align: super;
         line-height: 20px;
+
+        span {
+          display: inline-block;
+          transform: skew(-20deg);
+        }
       }
       
       .bell {
@@ -55,7 +60,12 @@
       }
 
       .tab_wrapper {
+        position: relative;
         display: inline-block;
+
+        &:not(:first-child) {
+          margin-left: -3px;
+        }
       }
 
       .tab {
@@ -99,6 +109,18 @@
             border-bottom-color:#7695B7;
           }
         }
+
+        &::before {
+          transform: skew(18deg);
+          position: absolute;
+          display: inline-block;
+          content: "";
+          width: 1px;
+          height: 100%;
+          top: 0;
+          right: -7px;
+          background-color: #26415E;
+        }
         
         &::after {
           content: "";
@@ -136,30 +158,42 @@
       flex-flow: column wrap;
 
       .item {
-        background-color: #fff;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        background: #fff;
         margin: 8px 0 0 8px;
         border-radius: 3px;
-        box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+        // box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
         position: relative;
         font-family: PingFangSC-Medium;
         font-size: 13px;
         color: #0F1D42;
-        text-align: center;
+        transition: all 300ms;
+
+        &::after {
+          border-bottom-left-radius: 3px;
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          background: linear-gradient(to left bottom, transparent 50%, #A9B6C3 0) 100% 0 no-repeat;
+          width: 0;
+          height: 0;
+          content: "";
+          transition: width 300ms;
+        }
 
         &:hover {
           cursor: pointer;
 
+          & {
+            background: linear-gradient(-135deg, transparent 12px, #fff 0);
+          }
+
           &::after {
-            border-bottom-left-radius: 3px;
-            content: "";
-            width: 0px;
-            height: 0px;
-            border-color: #A9B6C3 #DEE5EA;
-            border-width: 0 17px 17px 0;
-            border-style: solid;
-            position: absolute;
-            top: 0;
-            left: calc(~"100% - 17px");
+            width: 17px;
+            height: 17px;
           }
         }
 
@@ -221,7 +255,7 @@
           }
 
           &__list4 {
-            display: block;
+            display: flex;
           }
         }
       }
