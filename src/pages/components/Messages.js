@@ -4,6 +4,8 @@ import styles from './messages.less';
 
 import mock from './mock';
 
+import somethingwrong from './mock';
+
 class Messages extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +26,8 @@ class Messages extends Component {
   }
 
   render() {
+    var bb = 123;
+
     return (
       <div className={styles.messages}>
         <div className={styles.messages__list}>

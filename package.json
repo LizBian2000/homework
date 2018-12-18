@@ -6,10 +6,17 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "roadhog": "^2.0.0"
+    "roadhog": "^2.0.0",
+    "eslint": "^3.19.0",
+    "babel-eslint": "^6.0.4",
+    "eslint-plugin-import": "^1.7.0"
   },
   "scripts": {
     "start": "roadhog server",
-    "build": "roadhog build"
-  }
+    "build": "roadhog build",
+    "lint": "eslint --fix src"
+  },
+  "pre-commit": [
+    "lint"
+  ]
 }
