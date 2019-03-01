@@ -25,7 +25,7 @@ class Messages extends Component {
         <div className={styles.messages__list}>
           {this.renderMsgItems()}
         </div>
-        <div className={styles.textarea__wrapper}><input placeholder="请输入内容..." /></div>
+        <div className={styles.textarea__wrapper}><input placeholder="请输入内容12345..." /></div>
       </div>
     );
   }
